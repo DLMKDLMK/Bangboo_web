@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/pageStyles.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script type="module" src="scripts/script.js"defer></script>
+  <title>Bangboo Page</title>
+</head>
+<body>
+      <header>
+        <figure class="logo">
+          <img src="img/zzz_logo.svg" alt="ZZZ">
+        </figure>
+        <h1>Bangboo ZZZ</h1>
+  </header>
+  <main>
+    
+      <ul class="card">
+        <li class="top-card">
+          <figure><img class="rank-icon" src="https://zzz.gg/_ipx/q_70&s_34x34/images/ItemRarity${el.rank}.png" alt="Rank ${el.rank}"></figure>
+          <h3 id="bangboo-name">Bangboo Name</h3>
+        </li>
+        <li>
+          <figure>
+            <img id="bangboo-image" src="img/Base_Bangboo_Portrait.webp" alt="Bangboo Image">
+          </figure>
+        </li>
+          <li>
+            <p id="bangboo-description">Bangboo Description</p>
+          </li>
+      </ul>
+      
+      <ul class="carrusel">
+          <li class="carruselbtn before btndisabled">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </li>
+          <ul class="bangboos">
+          </ul>
+          <li class="carruselbtn next">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </li>
+      </ul>
+  </main>
+  <footer>
+    <p>DLMKDLMK &copy;</p>
+    <p><span class="label">Total Bangboos:</span> <span class="value" id="total-bangboos">0</span></p>
+  </footer>
+</body>
+</html>
