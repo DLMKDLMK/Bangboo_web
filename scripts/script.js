@@ -67,7 +67,7 @@ function ajax(options) {
     headers: {
       "Content-type": "application/json;charset=utf-8",
     },
-    body: method !== "GET" ? JSON.stringify(data) : null,
+    body: JSON.stringify(data),
   })
     .then((resp) => (resp.ok ? resp.json() : Promise.reject(resp)))
     .then((json) => fExito(json))
