@@ -65,9 +65,9 @@ function ajax(options) {
   fetch(url, {
     method: method || "GET",
     headers: {
-      "Content-type": "applications/json;charset=utf-8",
+      "Content-type": "application/json;charset=utf-8",
     },
-    body: JSON.stringify(data),
+    body: method !== "GET" ? JSON.stringify(data) : null,
   })
     .then((resp) => (resp.ok ? resp.json() : Promise.reject(resp)))
     .then((json) => fExito(json))
