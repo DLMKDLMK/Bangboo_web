@@ -49,7 +49,7 @@ const bangboos_languaje_ES =[
 ]
 
 const bangboos = [];
-const displaybangboos = [];
+
 const displaynumber = 7; // Number of bangboos to display
 let numberbangboo = 0; // Starting index of bangboo to display
 let selectedIndex = 1;
@@ -116,18 +116,24 @@ function extractNumber(icon) {
 
 function displayData (data, numberbangboo) {
     const displaybangboos = data.slice(numberbangboo, numberbangboo + displaynumber)
+    if (displaybangboos.length < displaynumber) {
+      
+    }else{
     $grid.innerHTML = displaybangboos.map(el=>
-        `
-    <li class="bangboo" data-id=${el.id}>
-        <figure class="rank-container">
-          <img class="rank-icon" src="https://zzz.gg/_ipx/q_70&s_34x34/images/ItemRarity${el.rank}.png" alt="Rank ${el.rank}">
-        </figure>
-        <img src=${el.img}>
-        <p>${translateToSpanish(el.name)}</p>
-        
-    </li>
-        `
-    ).join('')
+            `
+        <li class="bangboo" data-id=${el.id}>
+            <figure class="rank-container">
+              <img class="rank-icon" src="https://zzz.gg/_ipx/q_70&s_34x34/images/ItemRarity${el.rank}.png" alt="Rank ${el.rank}">
+            </figure>
+            <img src=${el.img}>
+            <p>${translateToSpanish(el.name)}</p>
+            
+        </li>
+            `
+        ).join('')
+    }
+   
+    selectedBangboo(selectedIndex);
   } 
 
   function renderCard(bangboo) {
@@ -166,10 +172,11 @@ function displayData (data, numberbangboo) {
   }
 
 $d.addEventListener("DOMContentLoaded",ev=>{
+    const selectedIndex = 1;
     getData()
-    
-    
 })
+
+
 
 $carrusel.addEventListener("click", ev => {
   ev.preventDefault();
@@ -208,4 +215,20 @@ $carrusel.addEventListener("click", ev => {
     selectedIndex = parseInt(bangboo.dataset.id);
     selectedBangboo(selectedIndex);
   }
+
 });
+
+   $d.addEventListener("keydown", ev => {
+  
+  if (ev.key === "ArrowRight" && selectedIndex < bangboos.length) {
+    selectedIndex++;
+    
+    
+  }
+  if (ev.key === "ArrowLeft" && selectedIndex > 1) {
+    selectedIndex--;
+    
+    
+  }
+  displayData(bangboos, selectedIndex-1);
+  })
