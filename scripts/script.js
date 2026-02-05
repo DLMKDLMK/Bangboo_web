@@ -55,8 +55,8 @@ let numberbangboo = 0; // Starting index of bangboo to display
 let selectedIndex = 1;
 
 
-const url = "https://corsproxy.io/?" + 
-            "https://api.hakush.in/zzz/data/bangboo.json"
+const url = "https://api.allorigins.win/raw?url=" +
+            encodeURIComponent("https://api.hakush.in/zzz/data/bangboo.json");
 
 
 function ajax(options) {
