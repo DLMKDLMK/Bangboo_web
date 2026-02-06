@@ -7,6 +7,7 @@ const $d = document,
   $before = $d.querySelector(".before"),
   $totalbangboos = $d.querySelector("#total-bangboos");
 
+
 const bangboos_languaje_ES =[
   {"english": "Agent Gulliver", "spanish": "Agente Gulliver"},
   {"english": "Amillion", "spanish": "Amillion"},
@@ -59,14 +60,18 @@ const url = "https://api.allorigins.win/raw?url=" +
             encodeURIComponent("https://api.hakush.in/zzz/data/bangboo.json");
 
 
+function loader(opcion) {
+    if(opcion==true)
+    $loader.style.display=`block`
+    else $loader.style.display=`none`
+}
+
 function ajax(options) {
   const { url, method, fExito, fError, data } = options;
 
   fetch(url, {
     method: method || "GET",
-    headers: {
-      "Content-type": "application/json;charset=utf-8",
-    },
+    headers: {},
     body: JSON.stringify(data),
   })
     .then((resp) => (resp.ok ? resp.json() : Promise.reject(resp)))
@@ -94,6 +99,7 @@ function getData() {
                             img: extractNumber(bangboo.icon)
                         })
              })
+            loader(false)
             displayData(bangboos, numberbangboo)
             selectedBangboo(selectedIndex)
             $totalbangboos.textContent =  bangboos.length;
