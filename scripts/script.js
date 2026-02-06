@@ -45,7 +45,7 @@ const bangboos_languaje_ES =[
   {"english": "Luckyboo", "spanish": "Suertebú"},
   {"english": "Butler", "spanish": "Mayordomobú"},
   {"english": "Robin", "spanish": "Robín"},
-  {"english": "Biggest Fan", "spanish": "Fan Número Uno"},
+  {"english": "Biggest Fan", "spanish": "Megafán"},
   {"english": "Birkblick", "spanish": "Birkblick"}
 ]
 
